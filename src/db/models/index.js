@@ -31,8 +31,6 @@ Object.keys(db).forEach(modelName => {
     }
 });
 
-console.log(db, 'db');
-
 db.Party.belongsToMany(db.User, {
     as: 'PartyToUsers', // { model: Party, as: 'PartyToUsers' }
     through: 'UserParty', //this can be string or a model,

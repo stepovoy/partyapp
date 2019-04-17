@@ -12,10 +12,15 @@ router.get('/users', UsersController.index);
 router.post('/users', UsersController.create);
 router.put('/users/:id', UsersController.update);
 router.delete('/users/:id', UsersController.delete);
-//
+
 router.get('/parties', PartyController.index);
 router.post('/parties', PartyController.create);
 router.put('/parties/:id', PartyController.update);
 router.delete('/parties/:id', PartyController.delete);
+
+router.get('/parties/users', PartyController.users);
+router.post('/parties/users', PartyController.addUser);
+// router.put('/parties/users/:id', PartyController.modifyUser);
+router.delete('/parties/users/:id', PartyController.removeUser);
 
 module.exports = router;
