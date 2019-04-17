@@ -33,7 +33,7 @@ bower_components
 build/Release
 
 # Storm directories
-.idea/
+idea/
 
 # Dependency directories
 node_modules/
