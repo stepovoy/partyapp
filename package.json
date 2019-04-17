@@ -1,0 +1,19 @@
+{
+  "name": "partyapp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "main": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arthur Stepovoy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.6.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.4.0"
+  }
+}
