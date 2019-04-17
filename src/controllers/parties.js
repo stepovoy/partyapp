@@ -1,25 +1,28 @@
-// const Party = require('../models/party');
+const Party = require('../db/models').Party;
+const PartyUser = require('../db/models').PartyUser;
 
 module.exports = {
-    index: (req, res) => {
+    index: async (req, res) => {
+        const data = await Party.findAll();
+        res.status(200).json({data});
+    },
+    create: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
-    create: (req, res) => {
+    update: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
-    update: (req, res) => {
+    delete: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
-    delete: (req, res) => {
+    users: async (req, res) => {
+        const data = await PartyUser.findAll();
+        res.status(200).json({data});
+    },
+    addUser: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
-    users: (req, res) => {
-        res.status(200).json({status: "Ok"});
-    },
-    addUser: (req, res) => {
-        res.status(200).json({status: "Ok"});
-    },
-    removeUser: (req, res) => {
+    removeUser: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
 };

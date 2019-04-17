@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('User', {
             username: {
-                allowNull: false,
+                // allowNull: false, // todo uncomment it for dev
                 type: DataTypes.STRING,
                 unique: true,
                 validate: {
@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
                 }
             },
             email: {
-                allowNull: false,
+                // allowNull: false, // todo uncomment it for dev
                 type: DataTypes.STRING,
                 unique: true,
                 validate: {
@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
                 }
             },
             password: {
-                allowNull: false,
+                // allowNull: false, // todo uncomment it for dev
                 type: DataTypes.STRING,
                 validate: {
                     notEmpty: true
@@ -26,8 +26,19 @@ module.exports = function (sequelize, DataTypes) {
             rating: {
                 type: DataTypes.INTEGER
             },
+            createdAt: {
+                // allowNull: false, // todo uncomment it for dev
+                type: DataTypes.DATE,
+                default: sequelize.Sequelize.fn('NOW')
+            },
+            updatedAt: {
+                // allowNull: false, // todo uncomment it for dev
+                type: DataTypes.DATE,
+                default: sequelize.Sequelize.fn('NOW')
+            },
         },
         {
+            timestamps: true,
             freezeTableName: true // Model tableName will be the same as the model name
         });
 };

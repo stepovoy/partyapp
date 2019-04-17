@@ -33,14 +33,14 @@ Object.keys(db).forEach(modelName => {
 
 db.Party.belongsToMany(db.User, {
     as: 'PartyToUsers', // { model: Party, as: 'PartyToUsers' }
-    through: 'UserParty', //this can be string or a model,
-    foreignKey: 'Party_rowId'
+    through: 'PartyUser', //this can be string or a model,
+    foreignKey: 'partyId'
 });
 
 db.User.belongsToMany(db.Party, {
     as: 'UserToParties', // { model: User, as: 'UserToParties' }
-    through: 'UserParty',
-    foreignKey: 'User_rowId'
+    through: 'PartyUser',
+    foreignKey: 'userId'
 });
 
 db.sequelize = sequelize;

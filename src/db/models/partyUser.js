@@ -1,19 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('Party', {
-            name: {
-                type: DataTypes.STRING
+    return sequelize.define('PartyUser', {
+            partyId: {
+                type: DataTypes.INTEGER,
             },
-            description: {
-                type: DataTypes.STRING
-            },
-            country: {
-                type: DataTypes.STRING
-            },
-            city: {
-                type: DataTypes.STRING
-            },
-            coordinates: {
-                type: DataTypes.STRING // for google maps (lat/long)
+            userId: {
+                type: DataTypes.INTEGER,
             },
             createdAt: {
                 // allowNull: false, // todo uncomment it for dev

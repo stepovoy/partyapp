@@ -1,17 +1,17 @@
-const db = require('../db/models');
-const User = require('../db/models/user');
+const User = require('../db/models').User;
 
 module.exports = {
-    index: (req, res) => {
+    index: async (req, res) => {
+        const data = await User.findAll();
+        res.status(200).json({data});
+    },
+    create: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
-    create: (req, res) => {
+    update: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
-    update: (req, res) => {
-        res.status(200).json({status: "Ok"});
-    },
-    delete: (req, res) => {
+    delete: async (req, res) => {
         res.status(200).json({status: "Ok"});
     },
 };
