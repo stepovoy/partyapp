@@ -9,21 +9,26 @@ module.exports = {
     },
 
     create: async (req, res) => {
-        const data = await User.create(); // todo this
+        const userData = req.body;
+
+        const data = await User.create(userData);
 
         res.status(200).json({data});
     },
 
     update: async (req, res) => {
-        const {userId} = req.params;
-        const where = {userId};
+        const userData = req.body;
+        const {id} = req.params;
+        const where = {id};
 
-        res.status(200).json({status: "Ok"}); // todo this
+        const data = await User.update(userData, {where});
+
+        res.status(200).json({data});
     },
 
     delete: async (req, res) => {
-        const {userId} = req.params;
-        const where = {userId};
+        const {id} = req.params;
+        const where = {id};
 
         const data = await User.destroy({where});
         res.status(200).json({data});

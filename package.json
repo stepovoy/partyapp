@@ -9,6 +9,7 @@
   "author": "Arthur Stepovoy",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mysql2": "^1.6.5",
     "sequelize": "^5.6.1"

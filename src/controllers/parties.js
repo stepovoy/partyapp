@@ -10,21 +10,26 @@ module.exports = {
     },
 
     create: async (req, res) => {
-        const data = await Party.create(); // todo this
+        const partyData = req.body;
+
+        const data = await Party.create(partyData);
 
         res.status(200).json({data});
     },
 
     update: async (req, res) => {
-        const {partyId} = req.params;
-        const where = {partyId};
+        const partyData = req.body;
+        const {id} = req.params;
+        const where = {id};
 
-        res.status(200).json({status: "Ok"}); // todo this
+        const data = await Party.update(partyData, {where});
+
+        res.status(200).json({data});
     },
 
     delete: async (req, res) => {
-        const {partyId} = req.params;
-        const where = {partyId};
+        const {id} = req.params;
+        const where = {id};
 
         const data = await PartyUser.destroy({where});
 

@@ -10,13 +10,13 @@ router.get('/reset-all', MainController.recreateDbs); // todo remove this in pro
 
 router.get('/users', UsersController.index);
 router.post('/users', UsersController.create);
-router.put('/users/:userId', UsersController.update);
-router.delete('/users/:userId', UsersController.delete);
+router.put('/users/:id', UsersController.update);
+router.delete('/users/:id', UsersController.delete);
 
 router.get('/parties', PartyController.index);
 router.post('/parties', PartyController.create);
-router.put('/parties/:partyId', PartyController.update);
-router.delete('/parties/:partyId', PartyController.delete);
+router.put('/parties/:id', PartyController.update);
+router.delete('/parties/:id', PartyController.delete);
 
 router.get('/parties/users', PartyController.allPartyUsers);
 router.get('/parties/:partyId/users', PartyController.partyUsers);
