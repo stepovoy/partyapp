@@ -6,21 +6,21 @@ const UsersController = require('../controllers/users');
 const PartyController = require('../controllers/parties');
 
 router.get('/health-check', MainController.healthCheck);
-router.get('/reset-all', MainController.recreateDbs);
+router.get('/reset-all', MainController.recreateDbs); // todo remove this in prod
 
 router.get('/users', UsersController.index);
 router.post('/users', UsersController.create);
-router.put('/users/:id', UsersController.update);
-router.delete('/users/:id', UsersController.delete);
+router.put('/users/:userId', UsersController.update);
+router.delete('/users/:userId', UsersController.delete);
 
 router.get('/parties', PartyController.index);
 router.post('/parties', PartyController.create);
-router.put('/parties/:id', PartyController.update);
-router.delete('/parties/:id', PartyController.delete);
+router.put('/parties/:partyId', PartyController.update);
+router.delete('/parties/:partyId', PartyController.delete);
 
-router.get('/parties/users', PartyController.users);
-router.post('/parties/users', PartyController.addUser);
-// router.put('/parties/users/:id', PartyController.modifyUser);
-router.delete('/parties/users/:id', PartyController.removeUser);
+router.get('/parties/users', PartyController.allPartyUsers);
+router.get('/parties/:partyId/users', PartyController.partyUsers);
+router.post('/parties/:partyId/users/:userId', PartyController.addUser);
+router.delete('/parties/:partyId/users/:userId', PartyController.removeUser);
 
 module.exports = router;

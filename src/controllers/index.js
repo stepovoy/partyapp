@@ -5,7 +5,7 @@ module.exports = {
         res.status(200).json({status: "Ok"});
     },
     recreateDbs: (req, res) => {
-        // Force sync all models // todo remove this in prod
+        // Force sync all models
         db.sequelize.sync({force: true}).then(() => {
             console.log('success');
         }).catch(error => {
